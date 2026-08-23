@@ -1,9 +1,13 @@
 # The Cordango command line, as a Homebrew formula.
 #
-# The canonical copy of this file lives in the compiler repository, at
-# `packaging/homebrew/cordango.rb` in cordango/cordango — beside the workflow that builds the assets
-# it points at. On release it is copied here with the version and the four checksums taken from that
-# release's own SHA256SUMS. Edit it there.
+# THIS FILE BELONGS IN `cordango/homebrew-tap`, at `Formula/cordango.rb`. It is kept here so the
+# canonical copy sits beside the workflow that produces the assets it points at.
+#
+# THE CHECKSUMS BELOW ARE ZEROS ON PURPOSE. They are of files that do not exist until the release is
+# built, so this copy is the shape rather than the answer: `release.yml` runs `packaging/render.sh`
+# over the real SHA256SUMS and attaches the finished formula to the release. Copy THAT into the tap.
+# A formula carrying the previous release's checksums under this release's version would look
+# finished and reject every download.
 #
 # A FORMULA RATHER THAN A CASK, deliberately. A cask is for .app bundles and installers, and Homebrew
 # quarantines what a cask downloads — which is why unsigned casks make people run `brew trust` before
@@ -13,7 +17,7 @@
 class Cordango < Formula
   desc "Compile an App Definition into a complete application you own"
   homepage "https://github.com/cordango/cordango"
-  version "0.4.0"
+  version "0.5.1-alpha"
   license "Apache-2.0"
 
   # No `depends_on`. The binary is self-contained: it carries its own .NET runtime and needs no
@@ -21,22 +25,22 @@ class Cordango < Formula
   on_macos do
     on_arm do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-osx-arm64.tar.gz"
-      sha256 "c7e39139a7da5636d7ad3eaf77c8dafa0d6fe1bca32407e739ee4220750dcb8d"
+      sha256 "c6c34e2d513ef695b07eab6e94c5bd078b311360d3be1d7e671cb39efc628ed7"
     end
     on_intel do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-osx-x64.tar.gz"
-      sha256 "2a63088efab72780f1d5f752273f010696a3f203f89e62e4ef9006ee2462567f"
+      sha256 "e5b1eb609d6c12ab02c4f71563007a50e364a21c0ad2a2b78171beca8a6484a4"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-linux-arm64.tar.gz"
-      sha256 "27dda2b27543ac9cf50db544dc4f57ef7f0b7643b8b301df9d000bb482aa5c40"
+      sha256 "96cb4c94d503414eb755edea5be779fa4dc2cb1cb2ac54b49981989bcaa8863c"
     end
     on_intel do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-linux-x64.tar.gz"
-      sha256 "7fdc524f8838ef142ca1f4de62543b79465be3bd654e635d7eb233ccb3305855"
+      sha256 "629bc1bc6c5fc2a2aaab460d6965d6d7be3637c1000c350ea7ece4bd95b4e33e"
     end
   end
 
