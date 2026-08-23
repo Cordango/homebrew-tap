@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: A bug in cordango itself
+    url: https://github.com/cordango/cordango/issues/new/choose
+    about: This repository only carries the Homebrew formula. Bugs in the command, the compiler or the generated code belong upstream.
+  - name: Question or idea
+    url: https://github.com/cordango/cordango/discussions
+    about: Discussions live in the main repository.
+  - name: Security vulnerability
+    url: https://github.com/cordango/homebrew-tap/security/advisories/new
+    about: Report privately. Please do not open a public issue.
