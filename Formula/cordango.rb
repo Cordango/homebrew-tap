@@ -17,7 +17,7 @@
 class Cordango < Formula
   desc "Compile an App Definition into a complete application you own"
   homepage "https://github.com/cordango/cordango"
-  version "0.7.1"
+  version "0.7.2"
   license "Apache-2.0"
 
   # No `depends_on`. The binary is self-contained: it carries its own .NET runtime and needs no
@@ -25,22 +25,22 @@ class Cordango < Formula
   on_macos do
     on_arm do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-osx-arm64.tar.gz"
-      sha256 "8d282228048d9c56cfb6e5a5b5b5a6eb834766e5a1c8247baffe896f7e33a90d"
+      sha256 "ad6d0ee9d81960b1d105c716b0e0629218d4b2b86ba675336f119b42ba5b6598"
     end
     on_intel do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-osx-x64.tar.gz"
-      sha256 "b6d7836fba3205f2d36b8bdb85ff38854e6aafec0775c5c30a4a8737f4cfd2ab"
+      sha256 "0c97bab9bd9081431809845853e6e1c70185d42d7d5915bd5331f8dc0cbf3bb5"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-linux-arm64.tar.gz"
-      sha256 "f3f170429f91a899ac059919e24a9ff1eb13ea3683857886cc6d4a0c3c862328"
+      sha256 "8a7bbd85e25077d40da6c58423b85f29c4dc7d3909ecd2f9ac9913f9315f8c27"
     end
     on_intel do
       url "https://github.com/cordango/cordango/releases/download/v#{version}/cordango-#{version}-linux-x64.tar.gz"
-      sha256 "f1bc657bd242f753e75d24a8acb186d95b4e6c6e8fa7a7b1d3257c9819bd50bc"
+      sha256 "7b1e002d2bfa337253aeafeb08e2342aafe0424e7b82ba074f78a8fa34407370"
     end
   end
 
